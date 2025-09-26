@@ -4,14 +4,18 @@ import os
 filename = 'AAPL.csv'
 data = pd.read_csv(os.path.join('data', filename))
 
-def SMA(df : pd.DataFrame, length):
+# Generate Simple moving average column
+def SMA(df : pd.DataFrame, length=20):
     df[("SMA" + str(length))] = df['Close'].rolling(length).mean()
 
+# Generate Returns column
 def pctChange(df : pd.DataFrame):
     df['Returns'] = df['Close'].pct_change()
 
-def EMA(df : pd.DataFrame, length):
+# Generate Exponential Moving Average column
+def EMA(df : pd.DataFrame, length=21):
     df[("EMA" + str(length))] = df['Close'].ewm(span=length, adjust=False).mean()
 
-def volatility(df : pd.DataFrame, length):
+# Generate volatility column
+def volatility(df : pd.DataFrame, length=10):
     df[('Volatility')] = df['Returns'].rolling(length).std()

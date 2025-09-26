@@ -3,7 +3,7 @@ import pandas as pd
 import os
 
 #---CONFIG CSV DOWNLOAD---#
-TICKER = ('AAPL').strip()
+TICKER = ('NVDA').strip()
 START_DATE = '2024-01-01'
 END_DATE = '2025-01-01'
 TIME_FRAME = '1d'

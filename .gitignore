@@ -6,6 +6,10 @@ __pycache__/
 # Data files
 data/
 processed_data/
+
+# Test files
+python/test.py
+
 # C extensions
 *.so
 
